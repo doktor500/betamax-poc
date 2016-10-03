@@ -1,20 +1,31 @@
 package uk.co.kenfos.controller;
 
+import org.apache.commons.lang.StringUtils;
 import org.junit.Rule;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import software.betamax.Configuration;
+import software.betamax.TapeMode;
 import software.betamax.junit.RecorderRule;
+import uk.co.kenfos.Application;
 
-import java.io.File;
+import static java.lang.System.getProperty;
 
-public class BetamaxTest {
+@RunWith(value = SpringRunner.class)
+@SpringBootTest(classes = Application.class)
+public abstract class BetamaxTest {
 
-    @Rule public RecorderRule recorderRule = new RecorderRule(getConfiguration());
+    @Rule
+    public RecorderRule recorderRule = new RecorderRule(getConfig());
+    private static final String TAPE_MODE = getProperty("betamax.defaultMode");
 
-    private static final String TAPES_DIR = "src/test/resources/betamax/tapes";
-
-    private Configuration getConfiguration() {
-        return Configuration.builder()
-            .tapeRoot(new File(TAPES_DIR))
-            .build();
+    private Configuration getConfig() {
+        return Configuration.builder().defaultMode(getTapeMode()).build();
     }
+
+    private TapeMode getTapeMode() {
+        return StringUtils.isEmpty(TAPE_MODE) ? TapeMode.WRITE_ONLY : TapeMode.valueOf(TAPE_MODE);
+    }
+
 }
