@@ -3,4 +3,8 @@ Betamax PoC
 
 Run the project with:
 
-    $ gradle runApp
+    $ ./gradlew bootRun
+
+Execute tests with:
+
+    $ ./gradlew test

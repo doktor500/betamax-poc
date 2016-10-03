@@ -19,12 +19,11 @@ buildscript {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.7'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'software.betamax:betamax-junit:2.0.1'
+    compile 'org.unitils:unitils-core:3.4.3'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 }
 
 task wrapper(type: Wrapper) {

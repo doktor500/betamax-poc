@@ -1,0 +1,27 @@
+!tape
+name: payment_service_healthcheck
+interactions:
+- recorded: 2016-10-03T10:37:50.956Z
+  request:
+    method: GET
+    uri: http://localhost:3000/healthcheck
+    headers:
+      Accept: text/plain, application/json, application/*+json, */*
+      Content-Length: '0'
+      Host: localhost:3000
+      Proxy-Connection: keep-alive
+      User-Agent: Java/1.8.0_73
+  response:
+    status: 200
+    headers:
+      Connection: keep-alive
+      Content-Length: '89'
+      Content-Type: application/json; charset=utf-8
+      Date: Mon, 03 Oct 2016 10:37:50 GMT
+      Server: undertow
+      Set-Cookie: JSESSIONID=7bYwozcbyx42jUf7YivAf1TW6tdCC-eD7aiMW6Rn; path=/; HttpOnly
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      X-Request-Id: 96342197-11f0-467d-9981-6cf5cb099bc9
+      X-XSS-Protection: 1; mode=block
+    body: '{"status":"OK","dependencies":{"mysql":"OK","fiqas":"OK","braintree":"OK","paypal":"OK"}}'
