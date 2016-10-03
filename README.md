@@ -10,6 +10,10 @@ Run the project with:
 
     $ ./gradlew bootRun
 
-Execute tests with:
+Execute tests with real http calls with:
 
     $ ./gradlew test
+
+Execute tests without real http calls with:
+
+    $ ./gradlew test-dev
