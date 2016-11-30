@@ -9,13 +9,14 @@ import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEqua
 
 public class MainControllerTest extends BetamaxTest {
 
-    @Autowired MainController controller;
+    @Autowired
+    private MainController controller;
 
     @Test
     @Betamax(tape = "payment_service_healthcheck")
     public void paymentServiceHealthcheck() {
         assertReflectionEquals(
-            parse("{'status':'OK','dependencies':{'mysql':'OK','fiqas':'OK','braintree':'OK','paypal':'OK'}}"),
+            parse("{'status':'OK','dependencies':{'mysql':'OK'}}"),
             parse(controller.index())
         );
     }

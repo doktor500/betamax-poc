@@ -21,7 +21,7 @@ public abstract class BetamaxTest {
     private static final String TAPE_MODE = getProperty("betamax.defaultMode");
 
     private Configuration getConfig() {
-        return Configuration.builder().defaultMode(getTapeMode()).build();
+        return Configuration.builder().defaultMode(getTapeMode()).sslEnabled(true).build();
     }
 
     private TapeMode getTapeMode() {

@@ -1,27 +1,27 @@
 !tape
 name: payment_service_healthcheck
 interactions:
-- recorded: 2016-10-03T15:38:54.939Z
+- recorded: 2016-11-30T18:03:26.232Z
   request:
     method: GET
-    uri: http://localhost:3000/healthcheck
+    uri: https://payments.shutl.co.uk/healthcheck
     headers:
       Accept: text/plain, application/json, application/*+json, */*
+      Connection: keep-alive
       Content-Length: '0'
-      Host: localhost:3000
-      Proxy-Connection: keep-alive
-      User-Agent: Java/1.7.0_79
+      Host: payments.shutl.co.uk
+      User-Agent: Java/1.8.0_73
   response:
     status: 200
     headers:
       Connection: keep-alive
-      Content-Length: '89'
+      Content-Length: '45'
       Content-Type: application/json; charset=utf-8
-      Date: Mon, 03 Oct 2016 15:38:54 GMT
-      Server: undertow
-      Set-Cookie: JSESSIONID=QU9z3dJc1JutK0UdVLXZpluOxuR76mU-TKicQGHC; path=/; HttpOnly
+      Date: Wed, 30 Nov 2016 18:03:25 GMT
+      Server: nginx/1.10.1
+      Set-Cookie: JSESSIONID=SR1ed0w_KURazVH1hMAearZJg7bWu12L9WQ5EnM4; path=/; HttpOnly
       X-Content-Type-Options: nosniff
       X-Frame-Options: DENY
-      X-Request-Id: 5716995c-a3e5-4313-a20a-a2946ae3ccf3
+      X-Request-Id: d47f6ba2-09a9-44e6-ac23-c2f650412867
       X-XSS-Protection: 1; mode=block
-    body: '{"status":"OK","dependencies":{"mysql":"OK","fiqas":"OK","braintree":"OK","paypal":"OK"}}'
+    body: '{"status":"OK","dependencies":{"mysql":"OK"}}'
